@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link href="/c3-0.4.10/c3-0.4.10/c3.css" rel="stylesheet" type="text/css">
+
+	<!-- Load d3.js and c3.js -->
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="/c3-0.4.10/c3-0.4.10/c3.min.js"></script>
+
+	<!-- Material -->
+
+	 <!-- Angular Material CSS using GitCDN to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="https://gitcdn.link/repo/angular/bower-material/master/angular-material.css">
+
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+
+    <!-- Angular Material Javascript using GitCDN to load directly from `bower-material/master` -->
+    <script src="https://gitcdn.link/repo/angular/bower-material/master/angular-material.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+
+	<!-- Material -->
+
+	<!-- Bootstrap Start -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap End -->
+
+
+</head>
+
+<script src="angular-messages/angular-messages.js"></script>
+<script src="tempLogger.js"></script>
+
+<link rel="stylesheet" type="text/css" href="tempLogger.css">
+
+<!-- Load c3.css -->
+
+
+<body>
+
+	<div ng-app="tempLogger" ng-controller="tempLoggerController">
+	  <md-content>
+    <br>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+        	<i class="material-icons">menu</i>
+        </md-button>
+        <h2>
+          <span>Temperature and Humidity Readings</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    </md-content>
+
+		<div class="title" style="padding-top: 50px; padding-left: 250px;">
+			<h1></h1>
+		</div>
+
+		<form novalidate class="simple-form form-horizontal" style="display: flex;">
+			<div class="form-group" style="padding: 30px 30px 30px 30px; align-items: center">
+				<md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+				<div style="padding-left: 20px; display:inline-block" >
+				<input class="btn btn-primary" type="submit" ng-click="update(dataLog)" value="Update"/>
+				</div>
+			</div>
+		</form>
+
+		<div style="padding-top: 30px;">
+			<div style="padding-top: 0px; padding-left: 200px;">
+				<h3>Temperature Recordings</h3>
+			</div>
+			<div id="chart2" style="padding-top: 30;">
+			
+			</div>
+
+			<md-divider></md-divider>
+
+			<div style="padding-top: 0px; padding-left: 200px;">
+				<h3>Humidity Recordings</h3>
+			</div>
+			<div id="chart3" style="padding-top: 30;">
+			
+			</div>
+
+			<md-divider></md-divider>
+			<div style="padding-top: 0px; padding-left: 200px;">
+				<h3>Humidity & Temp Recordings</h3>
+			</div>
+			<div id="chart" style="padding-top: 30;">
+			
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
