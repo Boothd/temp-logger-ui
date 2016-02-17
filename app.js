@@ -1,6 +1,17 @@
 var mongoose = require('mongoose');
 var dateFormat = require('dateformat');
-var properties = require('./properties');
+var fs = require('fs');     
+
+  var data = fs.readFileSync('./properties.json');
+  var properties = {};
+
+  try {
+    properties = JSON.parse(data);
+  }
+  catch (err) {
+    console.log('There has been an error parsing your JSON.')
+    console.log(err);
+  }
 
 mongoose.connect('mongodb://'+properties.username+':'+properties.password+'@'+properties.server+':'+properties.port+'/'+properties.db);
 

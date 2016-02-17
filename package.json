@@ -9,6 +9,7 @@
     "angular-aria": "^1.4.9",
     "angular-material": "^1.0.5",
     "angular-messages": "^1.5.0",
+    "dateformat": "^1.0.12",
     "express": "^4.13.3",
     "mongoose": "^4.3.6"
   },
