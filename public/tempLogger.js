@@ -7,7 +7,7 @@ controller('tempLoggerController', function($scope, $http) {
 		var formattedDate = date.getFullYear()+'-'+month+'-'+date.getDate();
     	//console.log(formattedDate);
 
-    	$http.get('http://localhost:3000/log/'+formattedDate).
+    	$http.get('/log'+formattedDate).
         	success(function(data) {
 	            $scope.log = data;
 
@@ -92,7 +92,7 @@ controller('tempLoggerController', function($scope, $http) {
             return hum;
     };
 
-    $http.get('http://localhost:3000/log').
+    $http.get('/log').
         success(function(data) {
             $scope.log = data;
 
